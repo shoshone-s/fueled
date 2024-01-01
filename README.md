@@ -1,5 +1,4 @@
 # Fueled
-# -------
 
 The **fueled** package is a Python library designed to assist in calculating and managing vehicle gas mileage, providing
 functionalities to compute fuel consumption, mileage, and perform unit conversions.
@@ -15,5 +14,6 @@ functionalities to compute fuel consumption, mileage, and perform unit conversio
 You can install the package via pip:
 
 ```bash
-pip install vehicle-mileage
+pip install fueled
+```
 
