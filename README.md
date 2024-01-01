@@ -17,5 +17,3 @@ You can install the package via pip:
 ```bash
 pip install vehicle-mileage
 
-
-# Usage
