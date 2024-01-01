@@ -16,4 +16,12 @@ You can install the package via pip:
 ```bash
 pip install fueled
 ```
+# Usage
 
+## Calculating Fuel Consumption
+
+```
+from fueled import Vehicle, Trip
+
+# Provide inputs
+```
