@@ -1,23 +1,8 @@
-# todo: delete this import later
-from pprint import pprint
-
-
-# imports
-# from dotenv import load_dotenv
-# load_dotenv()
-# import os
 import json
-# functions:
-# ----------
-# function for finding missing vehicle informations
-# def findVehicleInfo(vehicle):
-#     # import
-#     return ''
-
-
 
 # classes
-# class for trips (this will be from user input)
+# -------
+# trip class
 class Trip:
     def __init__(self, distance, units='mi', city_driving=0.55):
         self.distance = int(distance)
@@ -44,10 +29,13 @@ class Trip:
 # vehicle class
 class Vehicle:
     def __init__(self, year, make, model, transmission='automatic'):
-        self.year = int(year)
-        self.make = str(make.capitalize())
-        self.model = str(model.capitalize())
-        self.transmission = str(transmission.capitalize())
+        if not all([year, make, model]):
+            raise ValueError("Must have the attributes 'make', 'model', and 'year'.")
+        else:    
+            self.year = int(year)
+            self.make = str(make.capitalize())
+            self.model = str(model.capitalize())
+            self.transmission = str(transmission.capitalize())
     def __str__(self):
         return f'Vehicle:\t{self.year} {self.make} {self.model}\n Transmission: {self.transmission}'
 
@@ -57,7 +45,7 @@ class Vehicle:
         found_vehicles=[]
         try:
             # check to see if the vehicle info is in 'vehicles.json'
-            with open('data/vehicles.json', 'r') as source_file:
+            with open('fueled/data/vehicles.json', 'r') as source_file:
                 source_file_data = json.load(source_file)
                 for vehicle in source_file_data:
                     if (self.year == vehicle['year']) and (self.make in vehicle['make']) and (self.model in vehicle['model']):
