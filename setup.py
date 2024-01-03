@@ -4,6 +4,8 @@ setup(
     name="fueled",
     version="0.0.1",
     packages=find_packages(),
+    include_package_data=True,
+    package_data={'fueled': ['data/vehicles.json']},
     install_requires=[
 
     ],
