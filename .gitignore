@@ -1,7 +1,7 @@
 .venv/
 __pycache__
 .DS_Store
-
-
+dist/
+fueled.egg-info/
 
 notes/
