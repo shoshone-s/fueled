@@ -1,4 +1,5 @@
 import json
+import os
 
 # classes
 # -------
@@ -44,14 +45,19 @@ class Vehicle:
         # init list for vehicles matching description
         found_vehicles=[]
         try:
+            working_file_path = os.path.dirname(__file__)
+            data_file_path = 'test_data/sample.json'
+            full_path = os.path.join(working_file_path, data_file_path)
+
             # check to see if the vehicle info is in 'vehicles.json'
-            with open('package/test_data/sample.json', 'r') as source_file:
-                source_file_data = json.load(source_file)
-                for vehicle in source_file_data:
-                    if (self.year == vehicle['year']) and (self.make in vehicle['make']) and (self.model in vehicle['model']):
-                        found_vehicles.append(vehicle)
-                    else:
-                        pass
+            file_obj = open(full_path, 'r')
+            source_file_data = json.load(file_obj)
+            file_obj.close()
+            for vehicle in source_file_data:
+                if (self.year == vehicle['year']) and (self.make in vehicle['make']) and (self.model in vehicle['model']):
+                    found_vehicles.append(vehicle)
+                else:
+                    pass
         except Exception as err:
             return err
         finally:
