@@ -2,12 +2,11 @@ from setuptools import setup, find_packages
 
 setup(
     name="fueled",
-    version="0.0.3",
+    version="0.0.4",
     packages=find_packages(),
     include_package_data=True,
     package_data={'fueled': ['data/vehicles.json']},
     install_requires=[
-        'json',
 
     ],
     author='shoshone-s',
