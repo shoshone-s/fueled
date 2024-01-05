@@ -1,6 +1,6 @@
 # **Fueled**
 
-The **_fueled_** package is a Python library designed to assist in calculating and managing vehicle gas mileage, providing
+The **_fueled_** package is a Python package designed to assist in calculating and managing vehicle gas mileage, providing
 functionalities to compute fuel consumption, mileage, and perform unit conversions.
 
 ## **Features**
